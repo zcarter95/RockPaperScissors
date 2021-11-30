@@ -1,0 +1,48 @@
+body {
+    background: #E5E5E5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 10px solid darkblue;
+}
+
+h1, button, textarea {
+    padding: 16px;
+    margin: 16px;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+p{
+    font-size: 24px;
+}
+
+textarea {
+    width: 500px;
+    height: 200px;
+    font-size: 24px;
+}
+
+.Buttons {
+    display: flex;
+}
+
+button {
+    font-size: 24px;
+    background-color: darkblue;
+    color: whitesmoke;
+    border-radius: 8px;
+    width: 150px;
+}

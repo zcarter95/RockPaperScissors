@@ -5,9 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Rock, Paper, Scissors</title>
 </head>
-<body>
-    <button onClick="JavaScript:game()">Click Me</button>
+<body onload="getPlayerInput()">
+    <div class="Container">
+        <h1>Rock, Paper, Scissors</h1>
+        <p>Can you beat the computer?</p>
+        <textarea>Click on Rock, Paper, or Scissors below:</textarea>
+        <div class="Buttons">
+            <button class="Rock">Rock</button>
+            <button class="Paper">Paper</button>
+            <button class="Scissors">Scissors</button>
+        </div>
+    </div>
 </body>
 </html>

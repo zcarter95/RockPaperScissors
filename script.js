@@ -6,15 +6,31 @@ function computerPlay(){
     return choices[randomInt];
 }
 
+// function getPlayerInput() {
+//     let playerInput = window.prompt("Enter 'Rock, Paper, or Scissors': ");
+//     let firstLetter = playerInput[0];
+//     let firstLetterCap = firstLetter.toUpperCase();
+//     let restOfInput = playerInput.slice(1);
+//     let restOfInputLower = restOfInput.toLowerCase();
+//     let inputCap = firstLetterCap + restOfInputLower;
+//     console.log(inputCap);
+//     return inputCap;
+// }
+
 function getPlayerInput() {
-    let playerInput = window.prompt("Enter 'Rock, Paper, or Scissors': ");
-    let firstLetter = playerInput[0];
-    let firstLetterCap = firstLetter.toUpperCase();
-    let restOfInput = playerInput.slice(1);
-    let restOfInputLower = restOfInput.toLowerCase();
-    let inputCap = firstLetterCap + restOfInputLower;
-    console.log(inputCap);
-    return inputCap;
+    let selection;
+    if(document.getElementsByClassName('Rock').clicked == true){
+        selection = 'Rock';
+        console.log('Rock');
+    }
+    else if(document.getElementsByClassName('Paper').clicked == true){
+        selection = 'Paper';
+        alert(selection);
+    }
+    else if(document.getElementsByClassName('Scissors').clicked == true){
+        selection = 'Scissors';
+        alert(selection);
+    }
 }
 
 function playRound () {
@@ -95,10 +111,13 @@ function game() {
         }
         else if (game === "Tie"){
             ties++;
+            if (i == 4){
+                i--;
+            }
         }
     }
     if (wins >= 3){
-        console.log("You won the game with " + wins + " wins, " + losses + " losses, and " + ties + "ties!");
+        console.log("You won the game with " + wins + " wins, " + losses + " losses, and " + ties + " ties!");
     }
     else if (losses >= 3){
         console.log("You lost the game with " + wins + " wins, " + losses + " losses, and " + ties + " ties :(");
