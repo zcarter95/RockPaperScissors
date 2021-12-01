@@ -102,8 +102,9 @@ const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
+    
         if (!gameOver){
-            playRound(button.className);
+            playRound(button.id);
             if (wins === 5 || losses === 5){
                 gameOver = true;
                 if (wins === 5){
@@ -122,5 +123,17 @@ buttons.forEach((button) => {
                 results.textContent = "Game Over! You Lost!";
             }
         }
+    })
+})
+
+buttons.forEach((button) => {
+    button.addEventListener('mouseenter', () => {
+        button.classList.add('Hover');
+    })
+})
+
+buttons.forEach((button) => {
+    button.addEventListener('mouseleave', () => {
+        button.classList.remove('Hover');
     })
 })

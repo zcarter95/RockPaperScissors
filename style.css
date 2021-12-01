@@ -48,6 +48,7 @@ button {
     color: whitesmoke;
     border-radius: 8px;
     width: 150px;
+    height: 75px;
 }
 
 #Results {
@@ -61,4 +62,15 @@ button {
     font-size: 24px;
     justify-content: space-around;
     width: 500px;
+}
+
+.Hover {
+    background-color: coral;
+    width: 200px;
+    height: 100px;
+    transition-duration:0.15s;
+}
+
+.Clicked {
+
 }
