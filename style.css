@@ -14,6 +14,7 @@ body {
     align-items: center;
     justify-content: center;
     border: 10px solid darkblue;
+    height: 600px;
 }
 
 h1, button, textarea {
@@ -23,6 +24,8 @@ h1, button, textarea {
 
 h1 {
     font-size: 48px;
+    text-align: center;
+    width: 800px;
 }
 
 p{
@@ -45,4 +48,17 @@ button {
     color: whitesmoke;
     border-radius: 8px;
     width: 150px;
+}
+
+#Results {
+    font-size: 32px;
+    padding: 16px;
+}
+
+.Score {
+    display: flex;
+    gap: 16px;
+    font-size: 24px;
+    justify-content: space-around;
+    width: 500px;
 }

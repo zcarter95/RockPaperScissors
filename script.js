@@ -1,4 +1,20 @@
 const choices = ['Rock', 'Paper', 'Scissors'];
+const results = document.querySelector('#Results');
+const winsText = document.querySelector('#Wins');
+const lossesText = document.querySelector('#Losses');
+const tiesText = document.querySelector('#Ties');
+
+let wins = 0;
+let losses = 0;
+let ties = 0;
+let gameOver = false;
+let gameWon = false;
+let gameLost = false;
+winsText.textContent = "Wins: " + wins;
+lossesText.textContent = "Losses: " + losses;
+tiesText.textContent = "Ties: " + ties;
+
+results.textContent = "Can you beat the computer??";
 function computerPlay(){
     let min = 0;
     let max = choices.length - 1;
@@ -6,123 +22,105 @@ function computerPlay(){
     return choices[randomInt];
 }
 
-// function getPlayerInput() {
-//     let playerInput = window.prompt("Enter 'Rock, Paper, or Scissors': ");
-//     let firstLetter = playerInput[0];
-//     let firstLetterCap = firstLetter.toUpperCase();
-//     let restOfInput = playerInput.slice(1);
-//     let restOfInputLower = restOfInput.toLowerCase();
-//     let inputCap = firstLetterCap + restOfInputLower;
-//     console.log(inputCap);
-//     return inputCap;
-// }
-
-function getPlayerInput() {
-    let selection;
-    if(document.getElementsByClassName('Rock').clicked == true){
-        selection = 'Rock';
-        console.log('Rock');
-    }
-    else if(document.getElementsByClassName('Paper').clicked == true){
-        selection = 'Paper';
-        alert(selection);
-    }
-    else if(document.getElementsByClassName('Scissors').clicked == true){
-        selection = 'Scissors';
-        alert(selection);
-    }
-}
-
-function playRound () {
-    let playerSelection = getPlayerInput();
+function playRound (selection) {
+    let playerSelection = selection;
     let computerSelection = computerPlay();
     let result;
+    if (wins === 5){
+        results.textContent = "You win the game! Refresh to play again.";
+    }
+    else if (losses === 5){
+        results.textContent = "You lost! Better luck next time! (Refresh the page to play again)";
+    }
     if (playerSelection === "Rock" && computerSelection === "Rock") {
-        console.log('You picked: ' + playerSelection);
-        console.log('Computer picked: ' + computerSelection);
-        console.log('You both picked Rock, its a tie.');
+        results.textContent = 'You both picked Rock, its a tie.';
         result = "Tie";
+        game(result);
     }
     else if (playerSelection === "Rock" && computerSelection === "Paper"){
-        console.log('You picked: ' + playerSelection);
-        console.log('Computer picked: ' + computerSelection);
-        console.log('You lose! Paper beats Rock');
+        results.textContent = 'You lose! Paper beats Rock';
         result = "Lose";
+        game(result);
     }
     else if (playerSelection === "Rock" && computerSelection === "Scissors") {
-        console.log('You picked: ' + playerSelection);
-        console.log('Computer picked: ' + computerSelection);
-        console.log('You win! Rock beats Scissors!');
+        results.textContent = 'You win! Rock beats Scissors!';
         result = "Win";
+        game(result);
     }
 
     else if (playerSelection === "Paper" && computerSelection === "Paper"){
-        console.log('You picked: ' + playerSelection);
-        console.log('Computer picked: ' + computerSelection);
-        console.log('You both picked Paper, its a tie.');  
+        results.textContent = 'You both picked Paper, its a tie.';  
         result = "Tie";
+        game(result);
     }
     else if (playerSelection === "Paper" && computerSelection === "Scissors"){
-        console.log('You picked: ' + playerSelection);
-        console.log('Computer picked: ' + computerSelection);
-        console.log('You lose! Scissors beats Paper');
+        results.textContent = 'You lose! Scissors beats Paper';
         result = "Lose";
+        game(result);
     }
     else if (playerSelection === "Paper" && computerSelection === "Rock"){
-        console.log('You picked: ' + playerSelection);
-        console.log('Computer picked: ' + computerSelection);
-        console.log('You win!, Paper beats Rock!');  
+        results.textContent = 'You win!, Paper beats Rock!';  
         result = "Win";
+        game(result);
     }
 
     else if (playerSelection === "Scissors" && computerSelection === "Scissors"){
-        console.log('You picked: ' + playerSelection);
-        console.log('Computer picked: ' + computerSelection);
-        console.log('Its a tie, you both picked Scissors');
+        results.textContent = 'Its a tie, you both picked Scissors';
         result = "Tie"; 
+        game(result);
     }
     else if (playerSelection === "Scissors" && computerSelection === "Rock"){
-        console.log('You picked: ' + playerSelection);
-        console.log('Computer picked: ' + computerSelection);
-        console.log('You lose! Rock beats Scissors!'); 
+        results.textContent = 'You lose! Rock beats Scissors!'; 
         result = "Lose";
+        game(result);
     }
     else if (playerSelection === "Scissors" && computerSelection === "Paper"){
-        console.log('You picked: ' + playerSelection);
-        console.log('Computer picked: ' + computerSelection);
-        console.log('You win! Scissors beats Paper!'); 
+        results.textContent = 'You win! Scissors beats Paper!'; 
         result = "Win";
+        game(result);
     }
     return result; 
 }
 
-function game() {
-    let wins = 0;
-    let losses = 0;
-    let ties = 0;
-    let game;
-    for (let i = 0; i < 5; i++){
-        game = playRound();
-        if (game === "Win"){
-            wins++;
-        }
-        else if (game === "Lose"){
-            losses++;
-        }
-        else if (game === "Tie"){
-            ties++;
-            if (i == 4){
-                i--;
-            }
-        }
+function game(result) {
+    
+    if (result === "Win"){
+        wins++;
+        winsText.textContent = "Wins: " + wins;
     }
-    if (wins >= 3){
-        console.log("You won the game with " + wins + " wins, " + losses + " losses, and " + ties + " ties!");
+    else if (result === "Lose"){
+        losses++;
+        lossesText.textContent = "Losses: " + losses;
     }
-    else if (losses >= 3){
-        console.log("You lost the game with " + wins + " wins, " + losses + " losses, and " + ties + " ties :(");
-    }
-    else {
-        console.log("You tied the game with " + wins + " wins, " + losses + " losses, and " + ties + " ties :/");
+    else if (result === "Tie"){
+        ties++;
+        tiesText.textContent = "Ties: " + ties;
     }
 }
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        if (!gameOver){
+            playRound(button.className);
+            if (wins === 5 || losses === 5){
+                gameOver = true;
+                if (wins === 5){
+                    gameWon = true;
+                }
+                else if (losses === 5){
+                    gameLost = true;
+                }
+            }
+        }
+        else if (gameOver){
+            if (gameWon){
+                results.textContent = "Game Over! You Won!";
+            }
+            else if (gameLost){
+                results.textContent = "Game Over! You Lost!";
+            }
+        }
+    })
+})

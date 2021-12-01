@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <title>Rock, Paper, Scissors</title>
 </head>
-<body onload="getPlayerInput()">
+<body>
     <div class="Container">
-        <h1>Rock, Paper, Scissors</h1>
-        <p>Can you beat the computer?</p>
-        <textarea>Click on Rock, Paper, or Scissors below:</textarea>
+        <h1>Rock | Paper | Scissors</h1>
+        <div id="Results"></div>
+        <div class="Score">
+            <div id="Wins">Wins: </div>
+            <div id="Losses">Losses: </div>
+            <div id="Ties">Ties: </div>
+        </div>
         <div class="Buttons">
-            <button class="Rock Selection-Button">Rock</button>
-            <button class="Paper Selection-Button">Paper</button>
-            <button class="Scissors Selection-Button">Scissors</button>
+            <button class="Rock">Rock</button>
+            <button class="Paper">Paper</button>
+            <button class="Scissors">Scissors</button>
         </div>
     </div>
 </body>
