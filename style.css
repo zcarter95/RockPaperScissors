@@ -6,14 +6,19 @@ body {
     justify-content: center;
     min-height: 100vh;
     font-family: 'Courier New', Courier, monospace;
+    background-image:radial-gradient(#CAD959, #34401A);
 }
+
 
 .Container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 10px solid darkblue;
+    border: 10px solid  #252617;
+    background-image: linear-gradient(#B4BF60, #64732F);
+    color: #252617;
+    border-radius: 12px;
     height: 600px;
 }
 
@@ -26,6 +31,7 @@ h1 {
     font-size: 48px;
     text-align: center;
     width: 800px;
+    font-weight: bold;
 }
 
 p{
@@ -40,15 +46,19 @@ textarea {
 
 .Buttons {
     display: flex;
+    height: 200px;
+    align-items: center;
 }
 
 button {
     font-size: 24px;
-    background-color: darkblue;
-    color: whitesmoke;
+    background-image: radial-gradient(#C065F0, #7824A3);
+    color: #D9F065;
+    font-weight: bold;
     border-radius: 8px;
     width: 150px;
     height: 75px;
+    box-shadow: black;
 }
 
 #Results {
@@ -65,12 +75,9 @@ button {
 }
 
 .Hover {
-    background-color: coral;
+    background-image: radial-gradient(#7D3BA3,#E7BDFF);
+    color: #D9F075;
     width: 200px;
     height: 100px;
     transition-duration:0.15s;
-}
-
-.Clicked {
-
 }
