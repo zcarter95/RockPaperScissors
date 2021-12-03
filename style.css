@@ -64,6 +64,7 @@ button {
 #Results {
     font-size: 32px;
     padding: 16px;
+    font-weight: bold;
 }
 
 .Score {
