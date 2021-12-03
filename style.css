@@ -82,3 +82,7 @@ button {
     height: 100px;
     transition-duration:0.15s;
 }
+
+#Wins, #Losses, #Ties {
+    font-weight: bold;
+}
